@@ -1,0 +1,21 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="bank.SelectDialog"
+        Title="Select Account"
+		SizeToContent="WidthAndHeight">
+	<Window.Styles>
+		<Style Selector="Window">
+			<Setter Property="FontSize" Value="20"/>
+		</Style>
+	</Window.Styles>
+	<StackPanel Orientation="Vertical">
+		<TextBox Margin="10" Watermark="6b9 ID" Text="{Binding inID, Mode=OneWayToSource}" />
+		<StackPanel Orientation="Horizontal" Margin="10">
+			<Button Margin="10" Content="OK" Command="{Binding ok}"/>
+			<Button Margin="10" Content="Cancel" Command="{Binding cancel}"/>
+		</StackPanel>
+	</StackPanel>
+</Window>

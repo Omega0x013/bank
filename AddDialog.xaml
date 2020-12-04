@@ -1,0 +1,56 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="bank.AddDialog"
+		Name="add_dialog_window"
+        Title="Add Account"
+		SizeToContent="WidthAndHeight">
+	<Window.Styles>
+		<Style Selector="Window">
+			<Setter Property="FontSize" Value="20"/>
+		</Style>
+	</Window.Styles>
+	<!-- <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+ 
+        <TextBlock Text="Enter some text" Margin="5"/>
+        <TextBox Grid.Row="1" Name="MyTextBox" Margin="5"/>
+        <Button Grid.Row="2" Content="OK" Margin="5"/>
+        <TextBlock Grid.Row="3" Name="MyTextBlock" Margin="5"/>
+    </Grid> -->
+
+	<StackPanel Orientation="Vertical" Margin="10">
+		<TextBlock Margin="10" Text="Add a new account" />
+		<TextBox Margin="10" Watermark="abc Name" Text="{Binding inName, Mode=OneWayToSource}" />
+
+		<TextBox Margin="10" Watermark="abc Address" Text="{Binding inAddress, Mode=OneWayToSource}" />
+
+		<TextBox Margin="10" Watermark="abc Phone No." Text="{Binding inPhone, Mode=OneWayToSource}" />
+
+		<TextBox Margin="10" Watermark="a@b Email" Text="{Binding inEmail, Mode=OneWayToSource}" />
+
+		<!-- The checked property on "current" represents whether or not it is checked. It will start checked, and will only become unchecked if savings is checked instead. -->
+		<RadioButton Margin="10" GroupName="AccType" Content="Current" Command="{Binding typeSel}" CommandParameter="C" />
+		<RadioButton Margin="10" GroupName="AccType" Content="Savings" Command="{Binding typeSel}" CommandParameter="S" />
+
+		<TextBox Margin="10" Watermark="0.0 Minimum" Text="{Binding inMinBal, Mode=OneWayToSource}" />
+
+		<TextBox Margin="10" Watermark="0.0% Interest" Text="{Binding inInterest, Mode=OneWayToSource}" />
+
+		<TextBox Margin="10" Watermark="000 Limit" Text="{Binding inLimit, Mode=OneWayToSource}" />
+
+		<StackPanel Orientation="Horizontal" Margin="10">
+			<Button Margin="10" Content="OK" Command="{Binding ok}"/>
+			<Button Margin="10" Content="Cancel" Command="{Binding cancel}"/>
+		</StackPanel>
+
+		<!-- <TextBlock Margin="10" Watermark="" -->
+	</StackPanel>
+</Window>
