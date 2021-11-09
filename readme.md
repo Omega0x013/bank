@@ -1,7 +1,5 @@
 # Bank
 
-I know it's a little messy, but it works :)
-
 ```text
 bank
 ├─ VIEW
